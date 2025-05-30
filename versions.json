@@ -41,8 +41,7 @@
       "bullseye",
       "slim-bullseye",
       "windows/windowsservercore-ltsc2025",
-      "windows/windowsservercore-ltsc2022",
-      "windows/windowsservercore-1809"
+      "windows/windowsservercore-ltsc2022"
     ],
     "version": "7.3.19"
   },
@@ -88,8 +87,7 @@
       "bullseye",
       "slim-bullseye",
       "windows/windowsservercore-ltsc2025",
-      "windows/windowsservercore-ltsc2022",
-      "windows/windowsservercore-1809"
+      "windows/windowsservercore-ltsc2022"
     ],
     "version": "7.3.19"
   },
@@ -133,8 +131,7 @@
       "bookworm",
       "slim-bookworm",
       "windows/windowsservercore-ltsc2025",
-      "windows/windowsservercore-ltsc2022",
-      "windows/windowsservercore-1809"
+      "windows/windowsservercore-ltsc2022"
     ],
     "version": "7.3.19"
   }
