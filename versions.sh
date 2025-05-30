@@ -124,7 +124,6 @@ for version in "${versions[@]}"; do
 					(
 						"ltsc2025",
 						"ltsc2022",
-						"1809",
 						empty # trailing comma
 					| "windows/windowsservercore-" + .)
 				else empty end
