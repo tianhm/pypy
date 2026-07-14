@@ -2,24 +2,24 @@
   "2.7": {
     "arches": {
       "amd64": {
-        "sha256": "7833be48244a6f4aa0720c6b98f151428291a52697da849ef6b3ca7d5bf45b96",
-        "url": "https://downloads.python.org/pypy/pypy2.7-v7.3.23-linux64.tar.bz2"
+        "sha256": "f4c021b928e7d5f4f7604c389dc992c2bdd8240da758a95fc88ef61a8a7e2ea5",
+        "url": "https://downloads.python.org/pypy/pypy2.7-v7.3.23-linux64.tar.gz"
       },
       "arm64v8": {
-        "sha256": "b0bec20c16b6ab2bd46bd4f5d6049b6070a22a53eaed437ee9ac36d842ceda74",
-        "url": "https://downloads.python.org/pypy/pypy2.7-v7.3.23-aarch64.tar.bz2"
+        "sha256": "521d8f1804360f1d27ce30dbf6c6eb7fa8294aa5463ca55bcd097d131c7f0046",
+        "url": "https://downloads.python.org/pypy/pypy2.7-v7.3.23-aarch64.tar.gz"
       },
       "darwin-": {
-        "sha256": "f83d8fce9695f598dc55187c0f6c06c367dbf76d288d2bca7dbf040e4be15f37",
-        "url": "https://downloads.python.org/pypy/pypy2.7-v7.3.23-macos_arm64.tar.bz2"
+        "sha256": "a7aa434a14f064396da4d39000efb184e45e8e092f6160541f7f2e44dd76a1a3",
+        "url": "https://downloads.python.org/pypy/pypy2.7-v7.3.23-macos_arm64.tar.gz"
       },
       "darwin-amd64": {
-        "sha256": "edbddb678c00f29c2361dbe6c6ea634f5d62e6854a775a9209c6b789bb0dc00b",
-        "url": "https://downloads.python.org/pypy/pypy2.7-v7.3.23-macos_x86_64.tar.bz2"
+        "sha256": "9ea1abf89ff10b8a61308b6d3825d9cd20a657d1a1635139d0a77ff72f1b6fb0",
+        "url": "https://downloads.python.org/pypy/pypy2.7-v7.3.23-macos_x86_64.tar.gz"
       },
       "i386": {
-        "sha256": "fa6499281775ec22f4742e9dd7b31c22b8fc6a700c1cf50aebc7ef24f61461c5",
-        "url": "https://downloads.python.org/pypy/pypy2.7-v7.3.23-linux32.tar.bz2"
+        "sha256": "9aba240a400064c70fcbb778c79d5759e60423c061226f684cfc0992267ca360",
+        "url": "https://downloads.python.org/pypy/pypy2.7-v7.3.23-linux32.tar.gz"
       },
       "windows-amd64": {
         "sha256": "005fda0a46e0e3f34476967c27e9f7f80d8b60a1095a2cda380e5eb47c3733ef",
@@ -48,24 +48,24 @@
   "3.11": {
     "arches": {
       "amd64": {
-        "sha256": "16f9f56e82d1f4ec95a324c1a8cacfd78afc7f0656c0a809a18725ef4391453a",
-        "url": "https://downloads.python.org/pypy/pypy3.11-v7.3.23-linux64.tar.bz2"
+        "sha256": "2bcab031cef7a37fe1930b51f7091e78a191ae63f80eca00a265d3378c3a645b",
+        "url": "https://downloads.python.org/pypy/pypy3.11-v7.3.23-linux64.tar.gz"
       },
       "arm64v8": {
-        "sha256": "5433ac0ad526aeb35025ef8509bed65cd62ea35cb9e21ac649c69a5eff4eecb6",
-        "url": "https://downloads.python.org/pypy/pypy3.11-v7.3.23-aarch64.tar.bz2"
+        "sha256": "ed3b27a95257a8bb88707042e6bb5fe64569d47ef44bdc9842c730667637dfbd",
+        "url": "https://downloads.python.org/pypy/pypy3.11-v7.3.23-aarch64.tar.gz"
       },
       "darwin-": {
-        "sha256": "4747b3aceba4c1c6104cddc0fe5ea302101d32955f0957347b9ecc4fbd7aed05",
-        "url": "https://downloads.python.org/pypy/pypy3.11-v7.3.23-macos_arm64.tar.bz2"
+        "sha256": "f837b3c203d60d7e25a31e267671a07ba0c9b9ac8081ad225571fb06fccf1b7b",
+        "url": "https://downloads.python.org/pypy/pypy3.11-v7.3.23-macos_arm64.tar.gz"
       },
       "darwin-amd64": {
-        "sha256": "c95363c4e87235d11a6cec8128239c291b1eb67a752778fbcfe029a71da82b5e",
-        "url": "https://downloads.python.org/pypy/pypy3.11-v7.3.23-macos_x86_64.tar.bz2"
+        "sha256": "798279b0f233893ae22754290aedf35a1aea1ec9013a8ad8110f166d85944c91",
+        "url": "https://downloads.python.org/pypy/pypy3.11-v7.3.23-macos_x86_64.tar.gz"
       },
       "i386": {
-        "sha256": "c7e2ffb173dcadbe4708a2e606e0b705474c1c33f25a09a4084f265d538172e4",
-        "url": "https://downloads.python.org/pypy/pypy3.11-v7.3.23-linux32.tar.bz2"
+        "sha256": "2b18b9d8f1ed1c69ac3aacd3b6ddbf032efb307b10240f59ca5c0aa8f23a544b",
+        "url": "https://downloads.python.org/pypy/pypy3.11-v7.3.23-linux32.tar.gz"
       },
       "windows-amd64": {
         "sha256": "948b8ea58dea5b9917210fe4afd242c788fbfaba1c3f1a25e696a404f703389a",

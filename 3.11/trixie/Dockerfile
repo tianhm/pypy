@@ -30,16 +30,16 @@ RUN set -eux; \
 	dpkgArch="$(dpkg --print-architecture)"; \
 	case "${dpkgArch##*-}" in \
 		'amd64') \
-			url='https://downloads.python.org/pypy/pypy3.11-v7.3.23-linux64.tar.bz2'; \
-			sha256='16f9f56e82d1f4ec95a324c1a8cacfd78afc7f0656c0a809a18725ef4391453a'; \
+			url='https://downloads.python.org/pypy/pypy3.11-v7.3.23-linux64.tar.gz'; \
+			sha256='2bcab031cef7a37fe1930b51f7091e78a191ae63f80eca00a265d3378c3a645b'; \
 			;; \
 		'arm64') \
-			url='https://downloads.python.org/pypy/pypy3.11-v7.3.23-aarch64.tar.bz2'; \
-			sha256='5433ac0ad526aeb35025ef8509bed65cd62ea35cb9e21ac649c69a5eff4eecb6'; \
+			url='https://downloads.python.org/pypy/pypy3.11-v7.3.23-aarch64.tar.gz'; \
+			sha256='ed3b27a95257a8bb88707042e6bb5fe64569d47ef44bdc9842c730667637dfbd'; \
 			;; \
 		'i386') \
-			url='https://downloads.python.org/pypy/pypy3.11-v7.3.23-linux32.tar.bz2'; \
-			sha256='c7e2ffb173dcadbe4708a2e606e0b705474c1c33f25a09a4084f265d538172e4'; \
+			url='https://downloads.python.org/pypy/pypy3.11-v7.3.23-linux32.tar.gz'; \
+			sha256='2b18b9d8f1ed1c69ac3aacd3b6ddbf032efb307b10240f59ca5c0aa8f23a544b'; \
 			;; \
 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; \
 	esac; \
@@ -52,12 +52,12 @@ RUN set -eux; \
 		libfontconfig1 \
 	; \
 	\
-	wget -O pypy.tar.bz2 "$url" --progress=dot:giga; \
-	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; \
+	wget -O pypy.tar.gz "$url" --progress=dot:giga; \
+	echo "$sha256 *pypy.tar.gz" | sha256sum --check --strict -; \
 	mkdir /opt/pypy; \
-	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; \
+	tar -xzC /opt/pypy --strip-components=1 -f pypy.tar.gz; \
 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; \
-	rm pypy.tar.bz2; \
+	rm pypy.tar.gz; \
 	\
 # delete a few (sometimes) problematic bundled libraries
 	rm -v /opt/pypy/lib/libtk*.so /opt/pypy/lib/libz.so*; \
