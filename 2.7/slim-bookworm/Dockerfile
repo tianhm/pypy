@@ -26,16 +26,16 @@ RUN set -eux; \
 	dpkgArch="$(dpkg --print-architecture)"; \
 	case "${dpkgArch##*-}" in \
 		'amd64') \
-			url='https://downloads.python.org/pypy/pypy2.7-v7.3.23-linux64.tar.bz2'; \
-			sha256='7833be48244a6f4aa0720c6b98f151428291a52697da849ef6b3ca7d5bf45b96'; \
+			url='https://downloads.python.org/pypy/pypy2.7-v7.3.23-linux64.tar.gz'; \
+			sha256='f4c021b928e7d5f4f7604c389dc992c2bdd8240da758a95fc88ef61a8a7e2ea5'; \
 			;; \
 		'arm64') \
-			url='https://downloads.python.org/pypy/pypy2.7-v7.3.23-aarch64.tar.bz2'; \
-			sha256='b0bec20c16b6ab2bd46bd4f5d6049b6070a22a53eaed437ee9ac36d842ceda74'; \
+			url='https://downloads.python.org/pypy/pypy2.7-v7.3.23-aarch64.tar.gz'; \
+			sha256='521d8f1804360f1d27ce30dbf6c6eb7fa8294aa5463ca55bcd097d131c7f0046'; \
 			;; \
 		'i386') \
-			url='https://downloads.python.org/pypy/pypy2.7-v7.3.23-linux32.tar.bz2'; \
-			sha256='fa6499281775ec22f4742e9dd7b31c22b8fc6a700c1cf50aebc7ef24f61461c5'; \
+			url='https://downloads.python.org/pypy/pypy2.7-v7.3.23-linux32.tar.gz'; \
+			sha256='9aba240a400064c70fcbb778c79d5759e60423c061226f684cfc0992267ca360'; \
 			;; \
 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; \
 	esac; \
@@ -43,19 +43,18 @@ RUN set -eux; \
 	savedAptMark="$(apt-mark showmanual)"; \
 	apt-get update; \
 	apt-get install -y --no-install-recommends \
-		bzip2 \
 		wget \
 # sometimes "pypy" (or associated .so files) has dynamic links to different system libraries
 # we install them here, and then use "ldd" further down to only keep what we actually need (which might even differ per architecture)
 		libfreetype6 \
 	; \
 	\
-	wget -O pypy.tar.bz2 "$url" --progress=dot:giga; \
-	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; \
+	wget -O pypy.tar.gz "$url" --progress=dot:giga; \
+	echo "$sha256 *pypy.tar.gz" | sha256sum --check --strict -; \
 	mkdir /opt/pypy; \
-	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; \
+	tar -xzC /opt/pypy --strip-components=1 -f pypy.tar.gz; \
 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; \
-	rm pypy.tar.bz2; \
+	rm pypy.tar.gz; \
 	\
 # delete a few (sometimes) problematic bundled libraries
 	rm -v /opt/pypy/lib/libtk*.so /opt/pypy/lib/libz.so*; \

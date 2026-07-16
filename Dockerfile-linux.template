@@ -88,7 +88,6 @@ RUN set -eux; \
 	apt-get update; \
 	apt-get install -y --no-install-recommends \
 {{ if is_slim then ( -}}
-		bzip2 \
 		wget \
 {{ ) else "" end -}}
 # sometimes "{{ cmd }}" (or associated .so files) has dynamic links to different system libraries
@@ -109,12 +108,12 @@ RUN set -eux; \
 {{ ) | add -}}
 	; \
 	\
-	wget -O pypy.tar.bz2 "$url" --progress=dot:giga; \
-	echo "$sha256 *pypy.tar.bz2" | sha256sum --check --strict -; \
+	wget -O pypy.tar.gz "$url" --progress=dot:giga; \
+	echo "$sha256 *pypy.tar.gz" | sha256sum --check --strict -; \
 	mkdir /opt/pypy; \
-	tar -xjC /opt/pypy --strip-components=1 -f pypy.tar.bz2; \
+	tar -xzC /opt/pypy --strip-components=1 -f pypy.tar.gz; \
 	find /opt/pypy/lib* -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; \
-	rm pypy.tar.bz2; \
+	rm pypy.tar.gz; \
 	\
 # delete a few (sometimes) problematic bundled libraries
 	rm -v /opt/pypy/lib/libtk*.so /opt/pypy/lib/libz.so*; \
